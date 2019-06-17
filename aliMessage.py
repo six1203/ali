@@ -139,7 +139,7 @@ if __name__ == '__main__':
                      Action="SendSms")
 
     TemplateCode = "SMS_160572932"
-    SignName = "据兰书馆"
+    SignName = "友邻"
     TemplateParam = {"code": "aasdda"}
     sign_string = ali.send_message_sign(PhoneNumbers="13310131625",
                                         TemplateParam=TemplateParam, TemplateCode=TemplateCode, SignName=SignName)
