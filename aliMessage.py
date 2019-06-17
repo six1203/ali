@@ -8,10 +8,10 @@ import datetime, time
 import base64
 
 
-
+message_url = "https://dysmsapi.aliyuncs.com/"
 
 class AliMessage():
-    __message_url = "https://dysmsapi.aliyuncs.com/"
+    
     def __init__(self, AccessKeyId, AccessKeySecret, Action, SignatureMethod="HMAC-SHA1", message_url=message_url):
         # 获取AccessKeyID
         self.AccessKeyId = AccessKeyId
@@ -84,7 +84,7 @@ class AliMessage():
     def get_request_url(self, PhoneNumbers, SignName, TemplateCode, TemplateParam, **kwargs):
         # 获取获取短信的路径
         sign_request_par = self.send_message_sign(PhoneNumbers, SignName, TemplateCode, TemplateParam, **kwargs)
-        return self.__message_url + "?" + sign_request_par
+        return self.message_url + "?" + sign_request_par
 
     def parameter_sorted(self, par_dict):
         # 对其待签名的请求参数，去掉"Signature"，进行acsii 进行排序
